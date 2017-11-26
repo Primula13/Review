@@ -6,4 +6,4 @@ def find_max_from_random():
     random_list = [randint(-1000, 1000) for _ in range(1000)]
     remove_doubles = set(random_list)
     find_max = sorted(list(remove_doubles), reverse=True)
-    print(find_max[0:2])
+    return random_list, find_max[0:2]
