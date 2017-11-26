@@ -13,39 +13,39 @@ def _triangle_exist(triangle):
 class Triangle(object):
 
     def __init__(self, side1, side2, side3):
-        self.side1 = side1
-        self.side2 = side2
-        self.side3 = side3
+        self.side1 = float(side1)
+        self.side2 = float(side2)
+        self.side3 = float(side3)
         self.is_exist = _triangle_exist(self)
 
     def triangle_perimeter(self):
         if self.is_exist is True:
             perimeter = self.side1 + self.side2 + self.side3
-            print("Перимметр треугольника %d" % perimeter)
+            return round(perimeter, 2)
         else:
-            print("Треугольник не существует.")
+            return "Треугольник не существует."
 
     def triangle_square(self):
         if self.is_exist is True:
             half_perimeter = (self.side1 + self.side2 + self.side3)/2
             square = (half_perimeter * (half_perimeter - self.side1) * (half_perimeter - self.side2) *
                       (half_perimeter - self.side3)) ** 0.5
-            print("Площадь треугольника %d" % round(square, 2))
+            return round(square, 2)
         else:
-            print("Треугольник не существует.")
+            return "Треугольник не существует."
 
     def triangle_type(self):
         if self.is_exist is True:
             if self.side1 == self.side2 == self.side3:
-                print("Треугольник равностронний")
+                return "Треугольник равностронний"
             elif ((self.side1 == self.side2 and self.side2 != self.side3) or (self.side2 == self.side3 and
                   self.side3 != self.side1) or (self.side3 == self.side1 and self.side1 != self.side2)):
-                print("Треугольник равнобедренный")
+                return "Треугольник равнобедренный"
             elif ((self.side1 ** 2 == self.side2 ** 2 + self.side3 ** 2) or
                   (self.side2 ** 2 == self.side1 ** 2 + self.side3 ** 2) or
                   (self.side3 ** 2 == self.side1 ** 2 + self.side2 ** 2)):
-                print("Tреугольник прямоугольный")
+                return "Треугольник прямоугольный"
             else:
-                print("Треугольник разносторонний")
+                return "Треугольник разносторонний"
         else:
-            print("Треугольник не существует.")
+            return "Треугольник не существует."
