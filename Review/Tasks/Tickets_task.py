@@ -2,7 +2,7 @@
 
 
 total = 0
-for x in range(1, 27):
+for x in range(1, 28):
     result = 0
     for y in range(1000):
         if y//100 + (y % 100)//10 + y % 10 == x:
